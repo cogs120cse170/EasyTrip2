@@ -168,8 +168,8 @@
 	</a> -->
 
 	<div class="description">
-		<div style="font-size: 1.4em;">
-			<h1 id=heading>Your Trip
+		<div style="font-size: 1.4em;" id="heading">
+			<h1 >Your Trip
 				<a href="TripPlan.html"><img id="edit" src="./img/edit_button.svg"></a></h1>
 		</div>
 	</div>
@@ -239,8 +239,9 @@
 		var endDate = endDates[endDates.length - 1];
 
 		//heading
-		var heading = location1.concat(" Trip ");
-		document.getElementById("heading").innerHTML = heading + "<a href=\"TripPlan.html\"><img id=\"edit\" src=\"./img/edit_button.svg\"></a>";
+        var heading = "<h1>";
+        heading=heading.concat(location1).concat(" Trip <a href=\"TripPlan.html\"><img id=\"edit\" src=\"./img/edit_button.svg\"></a></h1><h4>").concat(modifyDate1(startDate)).concat(" - ").concat(modifyDate1(endDate)).concat("</h4>");
+		document.getElementById("heading").innerHTML = heading ;
 		// Get elements
 		var elements = {
 			// Calendar element
@@ -379,7 +380,12 @@
 		}
 
 		// Show current date events
-		showEvents(min);
+        if(localStorage.getItem("date_selected")=== null){
+            showEvents(min);
+        }
+        else{
+            showEvents(new Date(JSON.parse(localStorage.getItem("date_selected"))));
+        }
 
 		// Add events
 		calendar.onDateClick(function(event, date) {

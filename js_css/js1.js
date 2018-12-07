@@ -145,11 +145,15 @@ for (i = 0; i < closebtns.length; i++) {
   });
 }
 
+
 function calender() {
   var number = document.getElementsByClassName('form-control').length;
   var locations = [];
   var startDates = [];
   var endDates = [];
+    
+    var d = new Date();
+    d.setDate(d.getDate() - 1);
     if(document.getElementsByClassName('form-control')[0].value===""){
         alert("Please select a location");
         return;
@@ -159,7 +163,7 @@ function calender() {
         alert("Please select a start date");
         return;
     }
-    else if(modifyDate(document.getElementsByClassName('start')[0].value)< new Date()){
+    else if(modifyDate(document.getElementsByClassName('start')[0].value)< d){
         alert("Start date has already passed. Please pick a valid upcoming start date.");
         return;
     }
@@ -167,7 +171,7 @@ function calender() {
         alert("Please selct end date");
         return;
     }
-    else if(modifyDate(document.getElementsByClassName('start')[0].value)< modifyDate(document.getElementsByClassName('start')[0].value)){
+    else if(modifyDate(document.getElementsByClassName('end')[0].value)< modifyDate(document.getElementsByClassName('start')[0].value)){
         alert("Start date must preceed end date.");
         return;
     }
@@ -211,6 +215,14 @@ function modifyDate(date){
     var month= date.substring(8);
     var formated= day+"/"+month+"/"+year
     return new Date(formated);
+}
+
+function modifyDate1(date){
+    var year =date.substring(2,4);
+    var day= date.substring(5,7);
+    var month= date.substring(8);
+    var formated= day+"/"+month+"/"+year
+    return formated;
 }
 
 function calender1() {
