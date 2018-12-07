@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Easy Trip- Trip Calender</title>
 
+<head>
+	<meta charset="utf-8">
+	<title>Easy Trip- Trip Calender</title>
+	<!-- Bootstrap CSS and javascript -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<!-- css for clendar -->
+	<link rel="stylesheet" type="text/css" href="js_css/jsCalendar.css">
+	<link rel="stylesheet" type="text/css" href="js_css/jsCalendar.darkseries.css">
+	<!-- General Project css-->
+	<link rel="stylesheet" type="text/css" href="js_css/style.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<!-- General Prject Javascript-->
+	<script src="js_css/js1.js"></script>
+	<!-- javascript for calendar-->
+	<script type="text/javascript" src="js_css/jsCalendar.js"></script>
+	<!--Bootstrap js-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
-        <!-- Bootstrap CSS and javascript -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-		<!-- css for clendar -->
-		<link rel="stylesheet" type="text/css" href="jsCalendar.css">
-        <link rel="stylesheet" type="text/css" href="jsCalendar.darkseries.css">
-
-        <!-- General Project css-->
-        <link rel="stylesheet" type="text/css" href="style.css">
-
-
-        <!-- jQuery library -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-        <!-- Popper JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-
-        <!-- General Prject Javascript-->
-        <script src="js1.js"></script>
-
-        <!-- javascript for calendar-->
-		<script type="text/javascript" src="jsCalendar.js"></script>
-
-        <!--Bootstrap js-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-
-
-		<!-- Demo Style -->
-		<style>
-			html, body {
+	<style>
+		html, body {
 				font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 			}
             /*body{
@@ -146,300 +134,318 @@
 				text-align: right;
 			}
 		</style>
-	</head>
+</head>
 
-	<body>
-        <nav class="navbar bg-dark navbar-dark">
-            <a class="navbar-brand" href="LandingPage.html">EasyTrip</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-							<ul class="navbar-nav">
-	              <li class="nav-item">
-										<a class="nav-link" href="profile.html">Profile</a>
-								</li>
-	              <li class="nav-item active">
-	                <a class="nav-link" href="LandingPage.html">Active Trips / Plan a Trip</a>
-	              </li>
-	              <li class="nav-item">
-	                  <a class="nav-link" href="calendar.html">Calendar</a>
-	              </li>
-	              <li class="nav-item">
-	                  <a class="nav-link" href="previoustrips.html">Previous Trips</a>
-	              <li class="nav-item">
-	                  <a class="nav-link" href="index.html">Logout</a>
-	              </li>
-	            </ul>
-            </div>
-        </nav>
-        <br>
-		<div class="description">
-			<div style="font-size: 1.4em;">
-                <h1 id=heading>Your Trip
-                    <a href="TripPlan.html"><img id="edit" src="./img/edit_button.svg"></a></h1>
-            </div>
+<body>
+	<nav class="navbar navbar-dark fixed-top">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="profile.html">Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="LandingPage.html">Active Trips</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="calendar.html">Calendar</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Logout</a>
+				</li>
+			</ul>
 		</div>
+		<a class="fixed-top navbar-brand" href="LandingPage.html">
+			<img src="img/Logo.png" alt="Logo" class="logo">
+		</a>
+	</nav>
+	<br>
 
-		<!-- Wrapper -->
-		<div id="wrapper">
-			<!-- Calendar element -->
-			<div id="events-calendar"></div>
-			<!-- Events -->
-			<div id="events"></div>
-			<!-- Clear -->
-			<div class="clear"></div>
+	<!-- <a onclick="goBack()">
+		<img src="img/back.png" class="back" alt="back">
+	</a> -->
+
+	<div class="description">
+		<div style="font-size: 1.4em;">
+			<h1 id=heading>Your Trip
+				<a href="TripPlan.html"><img id="edit" src="./img/edit_button.svg"></a></h1>
 		</div>
+	</div>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Calendar element -->
+		<div id="events-calendar"></div>
+		<!-- Events -->
+		<div id="events"></div>
+		<!-- Clear -->
 		<div class="clear"></div>
-        
-        <br>
-        
-        <h2>Recomended Activities For You</h2>
-        
-        <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="americanmuseum.html"><img class="result" src="img/search/americanmuseum.jpg" style="height: 300px; width:300px;">
-                    <p>American Museum</p>
-                </a>
-            </div>
-            <div class="col-md-4">
-              <a href="centralpark.html"><img class="result" src="img/search/centralpark.jpg" style="height: 300px; width:300px;">
-                  <p>Central Park</p>
-              </a>
-            </div><div class="col-md-4">
-              <a href="metromuseum.html"><img class="result" src="img/search/metromuseum.jpg" style="height: 300px; width:300px;">
-                  <p>Metro Museum</p>
-              </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-              <a href="modernmuseum.html"><img class="result" src="img/search/modernmuseum.jpg" style="height: 300px; width:300px;">
-                  <p>Modern Museum</p>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="statueofliberty.html"><img class="result" src="img/search/statue.jpg" style="height: 300px; width:300px;">
-                  <p>Statue of Liberty</p>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a href="timessquare.html"><img class="result" src="img/search/timessquare.jpg" style="height: 300px; width:300px;">
-                  <p>Time Square</p>
-              </a>
-            </div>
-        </div>
-    </div>
+	</div>
+	<div class="clear"></div>
 
-		<!-- Create the calendar -->
-		<script type="text/javascript">
-            //get local storage values
-            var startDates= JSON.parse(localStorage.getItem("startDates"));
-            var endDates= JSON.parse(localStorage.getItem("endDates"));
-            var locations= JSON.parse(localStorage.getItem("locations"));
-            var location1= locations[0];
-            var startDate= startDates[0];
-            var endDate= endDates[endDates.length-1];
+	<br>
 
-            //heading
-            var heading= location1.concat(" Trip ");
-            document.getElementById("heading").innerHTML = heading+ "<a href=\"TripPlan.html\"><img id=\"edit\" src=\"./img/edit_button.svg\"></a>";
-
-            /*alert(startDate);
-            alert(endDate);
-            alert(location1);*/
-
-            //set page title*/
+	<h2>Recomended Activities For You</h2>
+	<h5> From your tags <span id="getTags" class="recTags"></span> </h5>
 
 
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<a href="places/americanmuseum.html"><img class="result" src="img/search/americanmuseum.jpg" style="height: 300px; width:300px;">
+					<p>American Museum</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/centralpark.html"><img class="result" src="img/search/centralpark.jpg" style="height: 300px; width:300px;">
+					<p>Central Park</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/metromuseum.html"><img class="result" src="img/search/metromuseum.jpg" style="height: 300px; width:300px;">
+					<p>Metro Museum</p>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<a href="places/modernmuseum.html"><img class="result" src="img/search/modernmuseum.jpg" style="height: 300px; width:300px;">
+					<p>Modern Museum</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/statueofliberty.html"><img class="result" src="img/search/statue.jpg" style="height: 300px; width:300px;">
+					<p>Statue of Liberty</p>
+				</a>
+			</div>
+			<div class="col-md-4">
+				<a href="places/timessquare.html"><img class="result" src="img/search/timessquare.jpg" style="height: 300px; width:300px;">
+					<p>Time Square</p>
+				</a>
+			</div>
+		</div>
+	</div>
 
-			// Get elements
-			var elements = {
-				// Calendar element
-				calendar : document.getElementById("events-calendar"),
-				// Input element
-				events : document.getElementById("events")
-			}
+	<!-- Create the calendar -->
+	<script type="text/javascript">
+		//get local storage values
+		var startDates = JSON.parse(localStorage.getItem("startDates"));
+		var endDates = JSON.parse(localStorage.getItem("endDates"));
+		var locations = JSON.parse(localStorage.getItem("locations"));
+		var location1 = locations[0];
+		var startDate = startDates[0];
+		var endDate = endDates[endDates.length - 1];
 
-			// Create the calendar
-			elements.calendar.className = "white-theme";
-			var calendar = jsCalendar.new(elements.calendar);
-            var min= modifyDate(JSON.parse(localStorage.getItem("startDates"))[0]);
-            var max= modifyDate(JSON.parse(localStorage.getItem('endDates'))[JSON.parse(localStorage.getItem('endDates')).length-1]);
-            localStorage.setItem("date_selected",JSON.stringify(min));
+		//heading
+		var heading = location1.concat(" Trip ");
+		document.getElementById("heading").innerHTML = heading + "<a href=\"TripPlan.html\"><img id=\"edit\" src=\"./img/edit_button.svg\"></a>";
+		// Get elements
+		var elements = {
+			// Calendar element
+			calendar: document.getElementById("events-calendar"),
+			// Input element
+			events: document.getElementById("events")
+		}
+
+		// Create the calendar
+		elements.calendar.className = "white-theme";
+		var calendar = jsCalendar.new(elements.calendar);
+		var min = modifyDate(JSON.parse(localStorage.getItem("startDates"))[0]);
+		var max = modifyDate(JSON.parse(localStorage.getItem('endDates'))[JSON.parse(localStorage.getItem('endDates')).length - 1]);
+        if(localStorage.getItem("date_selected")=== null){
+            localStorage.setItem("date_selected", JSON.stringify(min));
             calendar.set(min);
-            calendar.min(min);
-            calendar.max(max);
+        }
+        else{
+            calendar.set(new Date(JSON.parse(localStorage.getItem("date_selected"))));
+        }
+		calendar.min(min);
+		calendar.max(max);
 
-			// Create events elements
-			elements.title = document.createElement("div");
-			elements.title.className = "title";
-			elements.events.appendChild(elements.title);
-			elements.subtitle = document.createElement("div");
-			elements.subtitle.className = "subtitle";
-			elements.events.appendChild(elements.subtitle);
-			elements.list = document.createElement("div");
-			elements.list.className = "list";
-			elements.events.appendChild(elements.list);
-			elements.actions = document.createElement("div");
-			elements.actions.className = "action";
-			elements.events.appendChild(elements.actions);
-			elements.addButton = document.createElement("input");
-			elements.addButton.type = "button";
-			elements.addButton.value = "Search Activities";
-			elements.actions.appendChild(elements.addButton);
+		// Create events elements
+		elements.title = document.createElement("div");
+		elements.title.className = "title";
+		elements.events.appendChild(elements.title);
+		elements.subtitle = document.createElement("div");
+		elements.subtitle.className = "subtitle";
+		elements.events.appendChild(elements.subtitle);
+		elements.list = document.createElement("div");
+		elements.list.className = "list";
+		elements.events.appendChild(elements.list);
+		elements.actions = document.createElement("div");
+		elements.actions.className = "action";
+		elements.events.appendChild(elements.actions);
+		elements.addButton = document.createElement("input");
+		elements.addButton.type = "button";
+		elements.addButton.value = "Search Activities";
+		elements.actions.appendChild(elements.addButton);
 
-			var events = {};
-			var date_format = "MM/DD/YYYY";
-			var current = null;
+		var events = {};
+		var date_format = "MM/DD/YYYY";
+		var current = null;
 
-			var showEvents = function(date){
-				// Date string
-				var id = jsCalendar.tools.dateToString(date, date_format, "en");
-				// Set date
-				current = new Date(date.getTime());
-				// Set title
-				elements.title.textContent = id;
-				// Clear old events
-				elements.list.innerHTML = "";
-				// Add events on list
-                
-                if(localStorage.getItem("date_selected")!==null && localStorage.getItem(localStorage.getItem("date_selected"))!== null){
-                    var places= JSON.parse(localStorage.getItem(localStorage.getItem("date_selected")));
-                    elements.subtitle.textContent = places.length + " " + ((places.length > 1) ? "events" : "event");
+		var showEvents = function(date) {
+			// Date string
+			var id = jsCalendar.tools.dateToString(date, date_format, "en");
+			// Set date
+			current = new Date(date.getTime());
+			// Set title
+			elements.title.textContent = id;
+			// Clear old events
+			elements.list.innerHTML = "";
+			// Add events on list
 
-					var div;
-					var close;
-					// For each event
-					for (var i = 0; i < places.length; i++) {
-						div = document.createElement("div");
-						div.className = "event-item";
-						div.textContent = (i + 1) + ". " + places[i];
-						elements.list.appendChild(div);
-						close = document.createElement("div");
-						close.className = "close";
-						close.textContent = "×";
-                        close.color="white"
-						div.appendChild(close);
-						close.addEventListener("click", (function (date, index) {
-							return function () {
-								removeEvent(date, index);
-							}
-						})(date, i), false);
-                    }
-                    return;
-                }
-                
-				if (events.hasOwnProperty(id) && events[id].length) {
-					// Number of events
-					elements.subtitle.textContent = events[id].length + " " + ((events[id].length > 1) ? "events" : "event");
+			if (localStorage.getItem("date_selected") !== null && localStorage.getItem(localStorage.getItem("date_selected")) !== null) {
+				var places = JSON.parse(localStorage.getItem(localStorage.getItem("date_selected")));
+				elements.subtitle.textContent = places.length + " " + ((places.length > 1) ? "events" : "event");
 
-					var div;
-					var close;
-					// For each event
-					for (var i = 0; i < events[id].length; i++) {
-						div = document.createElement("div");
-						div.className = "event-item";
-						div.textContent = (i + 1) + ". " + events[id][i].name;
-						elements.list.appendChild(div);
-						close = document.createElement("div");
-						close.className = "close";
-						close.textContent = "×";
-                        close.color="white"
-						div.appendChild(close);
-						close.addEventListener("click", (function (date, index) {
-							return function () {
-								removeEvent(date, index);
-							}
-						})(date, i), false);
-					}
-				} else {
-					elements.subtitle.textContent = "No events";
+				var div;
+				var close;
+				// For each event
+				for (var i = 0; i < places.length; i++) {
+					div = document.createElement("div");
+					div.className = "event-item";
+					div.textContent = (i + 1) + ". " + places[i];
+					elements.list.appendChild(div);
+					close = document.createElement("div");
+					close.className = "close";
+					close.textContent = "×";
+					close.color = "white"
+					div.appendChild(close);
+					close.addEventListener("click", (function(date, index) {
+						return function() {
+							removeEvent(date, index);
+						}
+					})(date, i), false);
 				}
-			};
-
-			// showEvents();
-
-			var removeEvent = function (date, index) {
-				// Date string
-				var id = jsCalendar.tools.dateToString(date, date_format, "en");
-
-				// If no events return
-				if (!events.hasOwnProperty(id)) {
-					return;
-				}
-				// If not found
-				if (events[id].length <= index) {
-					return;
-				}
-
-				// Remove event
-				events[id].splice(index, 1);
-
-				// Refresh events
-				showEvents(current);
-
-				// If no events uncheck date
-				if (events[id].length === 0) {
-					calendar.unselect(date);
-				}
+				return;
 			}
 
-			// Show current date events
-            showEvents(min);
+			if (events.hasOwnProperty(id) && events[id].length) {
+				// Number of events
+				elements.subtitle.textContent = events[id].length + " " + ((events[id].length > 1) ? "events" : "event");
 
-			// Add events
-			calendar.onDateClick(function(event, date){
-				
-                if(date<min || date>max){
-                    alert("The date you selected isn't within the range that you idenitied");
-                }
-                else{
-                    // Update calendar date
-                    calendar.set(date);
-                    
-                    localStorage.setItem("date_selected",JSON.stringify(date));
-                    //alert(localStorage.getItem("date_selected"));
-                    // Show events
-                    showEvents(date);
-                }
-                
-			});
-
-			elements.addButton.addEventListener("click", function(){
-				// Get event name
-				/*var names = ["John", "Bob", "Anna", "George", "Harry", "Jack", "Alexander"];
-				var name = prompt(
-					"Event info",
-					names[Math. floor(Math.random() * names.length)] + "'s birthday."
-				);
-
-				//Return on cancel
-				if (name === null || name === "") {
-					return;
+				var div;
+				var close;
+				// For each event
+				for (var i = 0; i < events[id].length; i++) {
+					div = document.createElement("div");
+					div.className = "event-item";
+					div.textContent = (i + 1) + ". " + events[id][i].name;
+					elements.list.appendChild(div);
+					close = document.createElement("div");
+					close.className = "close";
+					close.textContent = "×";
+					close.color = "white"
+					div.appendChild(close);
+					close.addEventListener("click", (function(date, index) {
+						return function() {
+							removeEvent(date, index);
+						}
+					})(date, i), false);
 				}
+			} else {
+				elements.subtitle.textContent = "No events";
+			}
+		};
 
-				// Date string
-				var id = jsCalendar.tools.dateToString(current, date_format, "en");
+		//showEvents();
 
-				// If no events, create list
-				if (!events.hasOwnProperty(id)) {
-					// Select date
-					calendar.select(current);
-					// Create list
-					events[id] = [];
-				}
+		var removeEvent = function(date, index) {
+			// Date string
+			var id = jsCalendar.tools.dateToString(date, date_format, "en");
 
-				// Add event
-				events[id].push({name : "Tarun"});
+			// If no events return
+			if (!events.hasOwnProperty(id)) {
+				return;
+			}
+			// If not found
+			if (events[id].length <= index) {
+				return;
+			}
 
-				// Refresh events
-				showEvents(current);*/
-                window.location.href="./search.html";
-			}, false);
-		</script>
+			// Remove event
+			events[id].splice(index, 1);
 
+			// Refresh events
+			showEvents(current);
 
-	</body>
+			// If no events uncheck date
+			if (events[id].length === 0) {
+				calendar.unselect(date);
+			}
+		}
+
+		// Show current date events
+		showEvents(min);
+
+		// Add events
+		calendar.onDateClick(function(event, date) {
+
+			if (date < min || date > max) {
+				alert("The date you selected isn't within the range that you idenitied");
+			} else {
+				// Update calendar date
+				calendar.set(date);
+
+				localStorage.setItem("date_selected", JSON.stringify(date));
+				//alert(localStorage.getItem("date_selected"));
+				// Show events
+				showEvents(date);
+			}
+
+		});
+
+		elements.addButton.addEventListener("click", function() {
+			// Get event name
+			/*var names = ["John", "Bob", "Anna", "George", "Harry", "Jack", "Alexander"];
+			var name = prompt(
+				"Event info",
+				names[Math. floor(Math.random() * names.length)] + "'s birthday."
+			);
+
+			//Return on cancel
+			if (name === null || name === "") {
+				return;
+			}
+
+			// Date string
+			var id = jsCalendar.tools.dateToString(current, date_format, "en");
+
+			// If no events, create list
+			if (!events.hasOwnProperty(id)) {
+				// Select date
+				calendar.select(current);
+				// Create list
+				events[id] = [];
+			}
+
+			// Add event
+			events[id].push({name : "Tarun"});
+
+			// Refresh events
+			showEvents(current);*/
+			window.location.href = "./search.html";
+		}, false);
+	</script>
+	<script>
+		// To Add Tags
+		if (localStorage.getItem("Utags")) {
+			var userTags = [];
+			userTags = JSON.parse(localStorage.getItem("Utags"));
+
+			var toReturn = "";
+			for (var i = 0; i < userTags.length; i++) {
+				toReturn += userTags[i].tag + " ";
+			}
+			document.getElementById("getTags").innerHTML = toReturn;
+		} else {
+			document.getElementById("getTags").innerHTML = "-";
+		}
+	</script>
+</body>
+<script src="js_css/js1.js"></script>
+
 </html>
